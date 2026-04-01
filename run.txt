@@ -1,0 +1,23 @@
+python extend_vocab_config.py --output_path=checkpoints/ --metadata_path processed_data/metadata_train.csv --language vi --extended_vocab_size 2000
+
+CUDA_VISIBLE_DEVICES=0 python train_dvae_xtts.py \
+--output_path=checkpoints/ \
+--train_csv_path=processed_data/metadata_train.csv \
+--eval_csv_path=processed_data/metadata_eval.csv \
+--language="vi" \
+--num_epochs=10 \
+--batch_size=128 \
+--lr=5e-6
+
+
+CUDA_VISIBLE_DEVICES=0 python train_gpt_xtts.py \
+--output_path checkpoints/ \
+--metadatas processed_data/metadata_train.csv,processed_data/metadata_eval.csv,vi \
+--num_epochs 5 \
+--batch_size 2 \
+--grad_acumm 4 \
+--max_text_length 400 \
+--max_audio_length 330750 \
+--weight_decay 1e-2 \
+--lr 5e-6 \
+--save_step 50000
