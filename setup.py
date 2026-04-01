@@ -8,6 +8,6 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="nguyenhieu3205xt/XTTS-v2-Checkpoint", # nguyenhiext/your-dataset-name
     repo_type="model", # hoặc "model"
-    local_dir="./checkpoints",
+    local_dir="./checkpoints/XTTS_v2.0_original_model_files",
     token=""
 )
