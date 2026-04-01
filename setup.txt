@@ -1,5 +1,9 @@
 python setup.py
+wget https://huggingface.co/datasets/nguyenhieu3205xt/VietMuong-LowResource/resolve/main/wavs.zip
+unzip wavs.zip
 conda create -n myenv python=3.10
 conda activate myenv
 pip install -r requirements.txt
 pip install nvitop
+pip install torchcodec
+pip install --upgrade librosa
