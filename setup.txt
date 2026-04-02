@@ -8,3 +8,6 @@ pip install -r requirements.txt
 pip install nvitop
 pip install torchcodec
 pip install --upgrade librosa
+pip install gdown
+gdown 1pjQfUMRqLstYBL3jGX_JiRy84WpAIxOM
+unzip data_4-5s.zip
